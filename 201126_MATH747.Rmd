@@ -93,6 +93,13 @@ background-size: 750px
 
 .footnote[source:  [**CIHI**](https://www.cihi.ca/en/hospital-stays-in-canada)]
 
+???
+* covid-19 patients for one, of course
+
+* but also non-covid-19 patients
+  * there are many common (and urgent) reasons people get hospitalized every day; here are some examples
+
+
 ---
 
 # who suffers?
@@ -108,9 +115,11 @@ background-size: 750px
 .footnote[source:  [**CIHI**](https://www.cihi.ca/en/hospital-stays-in-canada)]
 
 ???
+* there are also emergency and routine surgeries
 * and other conditions that aren't maybe immediately urgent but can become urgent: 
   * infections, crohn's disease flare-ups, falls, chest pains, pancreatitis, gall stones, uncontrolled diabetes, small bowel obstruction, seizures, minor trauma, medical overdose
-* treatments like chemotherapy, dialysis 
+* treatments like chemotherapy, dialysis
+
 ---
 
 # who suffers?
