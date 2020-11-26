@@ -16,6 +16,8 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+
+n_ccmp_resolved <- 86741
 ```
 
 class: center, middle
