@@ -48,6 +48,10 @@ class: center, middle
 &lt;/tr&gt;
 &lt;/table&gt;
 
+???
+
+* mention raised hand function on zoom
+
 ---
 
 
@@ -75,9 +79,19 @@ background-size: 750px
 
 * one of the biggest dangers with COVID is that we overwhelm our healthcare capacity
 
+* precisely what we're worried about right now and a major reason the big provincial population centers (toronto and peel) have been moved to lockdown
+
+* if hospitals were to be overwhelmed...
+
 ---
 
 # who suffers?
+
+???
+* covid-19 patients for one, of course
+
+* but also non-covid-19 patients
+  * there are many common (and urgent) reasons people get hospitalized every day; here are some examples
 
 --
 
@@ -95,13 +109,6 @@ background-size: 750px
 
 .footnote[source:  [**CIHI**](https://www.cihi.ca/en/hospital-stays-in-canada)]
 
-???
-* covid-19 patients for one, of course
-
-* but also non-covid-19 patients
-  * there are many common (and urgent) reasons people get hospitalized every day; here are some examples
-
-
 ---
 
 # who suffers?
@@ -118,8 +125,10 @@ background-size: 750px
 
 ???
 * there are also emergency and routine surgeries
+
 * and other conditions that aren't maybe immediately urgent but can become urgent: 
   * infections, crohn's disease flare-ups, falls, chest pains, pancreatitis, gall stones, uncontrolled diabetes, small bowel obstruction, seizures, minor trauma, medical overdose
+  
 * treatments like chemotherapy, dialysis
 
 ---
@@ -135,7 +144,8 @@ background-size: 750px
 ???
 
 * risk of massive burnout from overwork in nurses, personal care workers, doctors, hospital custodians
-* bottom line: a *lot* more is at stake besides the outcomes of COVID-19 patients
+
+* bottom line: a *lot* more is at stake if hospitals were to be overrun besides the outcomes of COVID-19 patients
 
 ---
 
@@ -146,7 +156,7 @@ class: center, middle
 
 ???
 
-* so going back to the two questions people seem to be very interested in, i'd posit that we need to add a question in between:
+* so going back to the two questions that we're very interested in for COVID, i'd posit that we need to add a question in between:
 
 ---
 
@@ -156,22 +166,30 @@ class: center, middle
 ## **who is getting _very_ sick?**
 ## who is dying?
 
----
-
-class: center, middle
-
-## **who is getting _very_ sick?**
-
-
 ???
 
-* huge variance in outcomes due to heterogeneity in the population. why?
+* not just who is getting sick and who is dying, but who is getting _very_ sick
+
+* remember: huge variance in outcomes due to heterogeneity in the population. why? what kind of heterogeneity?
 
 ---
 
 class: middle
 
 ## comorbidities
+
+???
+
+* some heterogeneties that have been linked to the variance in COVID severity include...
+  - comorbidities (concurrent medical conditions that can exacerbate COVID; being immunocompromised, respiratory illness, cardiovascular illness)
+  - socioeconomic status (esp as it relates to access to healthcare)
+  - employment conditions (is this a person who works from home or works in a high-risk setting for contracting COVID? do they have access to regular PPE? if they get exposed, will they be exposed to a high viral load?)
+  - race (see correlations with above points)
+  - **age**
+
+* this last one is especially interesting because age is readily available in the data (compared with the other attributes above), as well as in clinical settings
+
+* COVID-19 severity is thought to scale up with age, but can we quantify this more precisely?
 
 --
 
@@ -189,29 +207,23 @@ class: middle
 
 ##**age**
 
-???
-
-* some heterogeneties that have been linked to the variance in COVID severity include...
-  - comorbidities (concurrent medical conditions that can exacerbate COVID; being immunocompromised, respiratory illness, cardiovascular illness)
-  - socioeconomic status (esp as it relates to access to healthcare)
-  - employment conditions (is this a person who works from home or works in a high-risk setting for contracting COVID? do they have access to regular PPE?)
-  - race
-  - **age**
-
-???
-
-* this last one is especially interesting because age is readily available in the data, as well as in clinical settings
-* COVID-19 severity is thought to scale up with age, but can we quantify this more precisely?
-
 ---
 
 class: center, middle
 
-# **what is the relationship between age and COVID-19 outcomes?**
+# **what is the relationship between _age_ and COVID-19 outcomes?**
 
 ---
 
 # setting
+
+???
+
+* while we've surpassed 100K known infections, a number of these are still in progress, so we look at resolved KIs
+  * resolved = record marked as "resolved" or "fatal"
+  * that way, we know the illness has run its course and we can tally outcomes
+  
+* so just as a reminder, here's what the epidemic has looked like in Ontario:
 
 --
 
@@ -233,12 +245,7 @@ class: center, middle
   * intubation
   * ventilation
   * death
-
-???
-
-* resolved = record marked as "resolved" or "fatal"
-* so just as a reminder, here's what the epidemic has looked like in Ontario:
-
+  
 ---
 
 background-image: url(figs/ts.png)
@@ -247,11 +254,15 @@ background-size: 850px
 
 ???
 * things really picked up in march, and then we went into shutdown
+
 * after shutdown, we started a phased reopening, that seemed to be going well for a while
-  * note: the phases here roughly indicate where the majority of the provincial population was at the time (reopening hasn't been uniform across the province)
+  * note: the phases here roughly indicate where the most densely populated regions were at the time (reopening hasn't been uniform across the province)
+  
 * then around the beginning-middle of sept things started getting worse
   * tempting to blame school reopening, but those only reopened around 8 sept, when we were already seeing an increase in reported infections (which lag from actual infection by a week or two)
 * so that's how things have been going over time, but i promised you ages!
+
+* so how do resolved known infection counts break down by age?
 
 ---
 
@@ -298,11 +309,13 @@ background-size: 850px
 
 ???
 * this touches on another big point: it's not just about who's getting sick, it's about who's getting tested (and thus where we are detecting infection)
+
 * note again: this is on a log scale, also normalized by population
   * the pink are positive tests, which is roughly equivalent to resolved known infections
   * the black are negative tests
+  
 * we see what i said about testing intensity in very old ages
-* interestingly, while in adults, we see roughly an even proportion of tests turning up positive, in kids we have fewer posties than we might expect given the number of negatives
+* interestingly, while in adults, we see roughly an even proportion of tests turning up positive, in kids we have fewer positives than we might expect compared to the number of negatives (i.e. given the total number of tests administered)
   * could be for a few reasons:
     * kids are maybe more likely to turn up with coronavirus symptoms for an unrelated reason (fever, cough, runny nose, etc)
     * kids might have a bit of cross-immunity with other coronaviruses given how frequently they get colds/how recently these immune system experiences occurred
@@ -335,9 +348,12 @@ background-size: 850px
 
 ???
 * as you might expect, the extremely elderly are the most vulnerable; they are the most likely to be frail and have other comorbidities that would make fighting off a SARS-CoV-2 infection more difficult
+
 * note that deaths here are faceted by whether or not we also have a record of hospitalization for that person
   * about 56% of deaths, the majority, have occurred in known infections with no record of hospitalization
   * prop of deaths not hospitalized seems to increase with age
+  * can't infer hospitalizations from deaths---don't seem to be strongly correlated
+  
 * so those are deaths, but remember
 
 ---
@@ -359,13 +375,14 @@ background-size: 850px
 ???
 
 * here is the distribution of hospitalizations (and other hospital outcomes) alongside deaths
-* (we use counts because that's what determines pressure on the hospital system)
+  * (these are **counts** because that's what determines pressure on the hospital system)
 * hospital outcomes are nested, and patients are tallied by their most severe outcome (ventilation is more severe than intubation, which is more severe than ICU admission, which is more severe than plain hospitalization)
   * because this is how the counts were tallied, you can see the outline of each distribution in this panel directly
   
 * what we notice: the distribution of hospitalizations is *much* wider than that for deaths
   * the wide plateau in hospitalizations starts roughly around age 54 and goes to about age 90...
   * that's much wider than generally appreciated. people in their fifties are not what we usually think of as "old" or "seniors"
+  
 * that's the age-specific pressure on the healthcare system, but can we maybe say more about individual risk?
 
 ---
@@ -375,19 +392,6 @@ background-position: center
 background-size: 850px
 
 class: bottom;
-
---
-
-&lt;br&gt;
-
-&amp;nbsp;&amp;nbsp;generalized additive model:
-`\(g(Y) = \beta_0 + \beta_1 f(X)\)`
-
---
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; 
-
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; generalized linear model: `\(g(Y) = \beta_0 + \beta_1 X\)`
 
 ???
 * here we estimated hospitalization probability given known infection and the survival probability given hospitalization for COVID-19 treatment.
@@ -404,6 +408,19 @@ class: bottom;
 * keep in mind: this is in a situation where our hospitals and ICUs have not been overwhelmed (yet) --- in some sense, this is the best we can do right now (barring some innovation in treatment or massive and rapid investment in our hospitals)
   
 * probability estimates from a binomial model, specifically a generalized linear model (link function is the log-odds, i.e. a logistic regression, resulting in a sigmoid curve), and a generalized additive model, where we allow for smooth functions of the predictor so we can capture more general behaviour than a simple monotonic sigmoid)
+
+--
+
+&lt;br&gt;
+
+&amp;nbsp;&amp;nbsp;generalized additive model:
+`\(g(Y) = \beta_0 + \beta_1 f(X)\)`
+
+--
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; 
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; generalized linear model: `\(g(Y) = \beta_0 + \beta_1 X\)`
 
 ---
 
@@ -463,6 +480,15 @@ class: bottom;
 
 ## caveats
 
+???
+* when both the first waves and second waves occurred, the testing guidelines selected for sufficiently symptomatic individuals (we were doing untargetted asymptomatic testing in the summer but stopped to protect testing capacity as the second wave started)
+
+* most of the data was collected during a period where we didn't have untargetted asymptomatic testing
+
+* we know a non-trivial proportion of infections (20-40% est) are asymptomatic; we're not capturing as much mild illness
+
+* this is an aggregate snapshot
+
 --
 
 * **known infections &lt; true prevalence**
@@ -474,17 +500,26 @@ class: bottom;
   * who is actually getting tested? _(availability, effort)_
   
 --
+
+* **probability of hospitalization given known infection** is likely an _overestimate_ for the general population
+  * but probability of survival given hospitalization is not
+
+--
   
 * **shutdown + physical distancing effort** has not homogeneous over time
-
-???
-* when both the first waves and second waves have occurred, the testing guidelines have selected for sufficiently symptomatic individuals (we were doing untargetted asymptomatic testing in the summer but stopped to protect testing capacity as the second wave started)
-* most of the data was collected during a period where we didn't have untargetted asymptomatic testing
-* we know a non-trivial proportion of infections (20-40% est) are asymptomatic; we're not capturing as much mild illness
 
 ---
 
 # future work
+
+???
+
+* how have changes in physical distancing/public health guidelines affected the age-specific distributions of severe COVID and deaths
+
+* some evidence that serious long-term complications despite mild initial illness
+
+* can we estimate the (age-specific) asymptomatic proportion and correct for underdetection due to guidelines requiring symptoms for testing
+
 
 --
 
@@ -497,12 +532,6 @@ class: bottom;
 --
 
 * can we correct for the **bias** in active infection testing?
-
-???
-
-* how have changes in physical distancing/public health guidelines affected the age-specific distributions of severe COVID and deaths
-* some evidence that serious long-term complications despite mild initial illness
-* can we estimate the (age-specific) asymptomatic proportion and correct for underdetection due to guidelines requiring symptoms for testing
 
 ---
 
