@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>COVID-19 modelling in Ontario: past, present, future</title>
+    <meta charset="utf-8" />
+    <meta name="author" content=" Irena Papst, PhD Postdoctoral Fellow Department of Mathematics &amp; Statistics McMaster University" />
+    <script src="2022-03-11_toronto-data-workshop_files/header-attrs-2.11/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="cols.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# COVID-19 modelling in Ontario:<br>past, present, future
+### <br>Irena Papst, PhD<br>Postdoctoral Fellow<br>Department of Mathematics &amp; Statistics<br>McMaster University
+
+---
+
+
+
+
+
+
+class: middle, center
+
+I wish to acknowledge this land on which the University of Toronto operates. For thousands of years it has been the traditional land of the **Huron-Wendat**, the **Seneca**, and the **Mississaugas of the Credit.** Today, this meeting place is still the home to many Indigenous people from across Turtle Island and I am grateful to have the opportunity to present today on this land.
+
+???
+- Indigenous land acknowledgment statement adapted from [Indigenous U of T](https://indigenous.utoronto.ca/about/land-acknowledgement/)
+
+---
+
+class: center, middle, inverse
+
+## Forecasting is an important tool&lt;br&gt;in controlling the spread of COVID-19
+
+???
+- short-term forecasting of COVID-19 has proven itself to be an **enormously useful** tool for **public health planning** throughout this pandemic
+
+---
+
+class: center, middle
+
+&lt;img src="figs/collages/collages.001.png" width="900" style="display: block; margin: auto;" /&gt;
+
+???
+- we've seen it time and time again
+- fun fact: some of those curves come from my research group, which regularly submit forecasts to 
+
+---
+
+class: middle, center
+
+&lt;img src="figs/osat.png" width="1300" style="display: block; margin: auto;" /&gt;
+
+???
+the ontario science advisory table, where the forecasts you'll see today have been submitted to, to both brief the gov and the public equally
+
+---
+
+class: center, middle, inverse
+
+## Forecasting is difficult,&lt;br&gt;but (usually) doable
+
+???
+- lots of moving parts, the situation is shifting on the ground, but if you're keeping on top of it, you can make useful forecasts on the fly
+
+- let's look at an example now
+
+---
+
+class: inverse, center, middle
+
+## 🔮 Forecast from 21 Feb 2021 🔮
+
+???
+- this is for the province of ontario, canada
+- the first time variants became a factor in ontario was in early 2021
+- not sure about you all, but this feels like years ago to me, so let's first remind ourselves what was going on at the time
+
+---
+
+&lt;img src="figs/feb-context-1.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+- in the **lead up** to the forecast date, marked here with a **dashed line**, we saw a slow and steady increase in **infection reports** 
+- and while **2000/3000 infections** reported in a province of almost **15 million** may not seem like much, the **strain** on the healthcare system was beginning to show
+
+---
+
+&lt;img src="figs/feb-context-2.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+-----
+- you can see **ICU occupancy** had also been rising with infection reports
+
+---
+
+&lt;img src="figs/feb-context-3.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+- and we had actually surpassed the **pre-COVID ICU capacity** threshold for the entire province
+- while we did expand ICU capacity in response to the pandemic, it was achieved through **hugely disruptive measures**, including **cancellations of "elective" surgeries** that sound optional, but may actually be lifesaving down the line
+- this was the beginning of a **potential crisis** in our hospitals, and we had to act
+
+---
+
+&lt;img src="figs/feb-context-4.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+- in response to rising infection reports and ICU occupancy, the government implemented **several interventions**, namely
+- lockdowns in Toronto and Peel in late november, the **two most populous health regions in the province** (representing about 30% of the provincial population)
+- followed by a **province-wide shutdown** on 26 december 
+- and then ultimately a **province-wide stay-at-home order** in mid-January
+
+---
+
+&lt;img src="figs/feb-context-5.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+- the combination of these interventions finally began **decreasing** infection reports and **pretty sharply** compared to the original incline, though **decline in ICU occupancy** was **slower**
+
+---
+
+&lt;img src="figs/feb-context-6.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+- the stay-at-home order was **set to expire** in early march, and since things were looking good, it was looking **likely** that the province **wouldn't extend it**
+- so the **question** at the time (as it usually is in these forecasts) was
+
+---
+
+class: inverse, middle, center
+
+# Is it safe to&lt;br&gt;loosen restrictions?
+
+---
+
+&lt;img src="figs/feb-context-6.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+- **just** looking at the trends in infection reports and ICU occupancy, you may think *"yes, it should be safe to reopen!"*
+- ICU occupancy was **still high** but **trending downward**, and we know the ICU trend is **lagged** from infection reports---people enter the ICU some time after testing positive and then they may stay in the ICU for a while
+- but there's **another piece of the puzzle** that isn't clear from infection reports or ICU occupancy
+
+---
+
+class: center
+
+&lt;img src="figs/feb-context-7.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+- **under the hood**, the Alpha varaint (aka strain **B.1.1.7**) had made its way into the province
+- this variant is about **50% more transmissible** compared to resident strains at the time
+- it was first confirmed in the province **coincidentally** on the same day as the province-wide shutdown, **26 december**
+- by the forecast date, it represented about **20%** of infection reports
+- we were particularly concerned about Alpha because **despite** the fact that our public health interventions were **successfully driving infection reports down pretty rapidly**, Alpha was finding a way to **increase its frequency** over this period... _scary!_
+- we also saw what alpha had done in the UK, which was about a month ahead of us in this surge, and so we were quite concerned
+
+--
+
+Trends in &lt;span style="font-weight:600;"&gt;infection reports&lt;/span&gt; and &lt;span style="color:#6F3B42;font-weight:600;"&gt;ICU occupancy&lt;/span&gt; favoured reopening,&lt;br&gt;while &lt;span style="color:#CE9A70;font-weight:600;"&gt;Alpha&lt;/span&gt; threatened it.
+
+---
+
+class: center
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt; 
+&lt;br&gt;
+&lt;img src="figs/feb-forecast-1.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+- so we fit transmission to the infection report data (the **black curve**) and then
+- so we made **two forecasts** at the time:
+  1. one where we **explicitly modelled the increasing frequency** of the Alpha variant through both the fit and the forecast period (**extended model**)
+  2. another where we detected **whatever effect** the variant was having on infection reports by fitting the transmission rate as usual, then we just **propagated that effect forward**, with no change to Alpha frequency going forward (**base model**)
+- the curve is the median forecast in ecah case and the band around each curve represents 95% confidence intervals
+- and here is **what happened** actually happened
+
+---
+
+class: center
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src="figs/feb-forecast-2.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+- these **hollow points** are still infection reports, just those observed after the forecast date
+- you can see that the forecast using the **extended model**, with the effect of the variant, **caught the third wave takeoff**
+- while the forecast using the base model showed some take-off, but **grossly underestimated the magnitude of the uptick** resulting from the measures relaxing
+
+--
+
+&lt;span style="font-size: 30px;display:block; margin-top:85px;"&gt;Infection reports *alone* could not signal&lt;br&gt;the start of the &lt;span style="color:#CE9A70;font-weight:600;"&gt;third wave&lt;/span&gt;.&lt;/span&gt;
+
+???
+- infection reports alone...
+- and that **including the variant** in our model was **crucial** for this forecast
+- now this is an example of a successful forecast, and in order to help you appreciate how much more difficult forecasting has gotten recently,
+
+---
+
+class: center, middle, inverse
+
+# How do we make these forecasts?
+
+???
+- let's take a look under the hood at how the sausage is made... how exactly do we make these forecasts?
+
+---
+
+class: center, middle
+
+&lt;img src="figs/collages/collages.002.png" width="1000" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center, middle
+
+&lt;img src="figs/collages/collages.003.png" width="1000" style="display: block; margin: auto;" /&gt;
+
+???
+- so let's start with what the data is we're fitting to
+
+---
+
+## 📊 Data
+
+&lt;img src="figs/infection-reports.png" height="300" style="display: block; margin: auto;" /&gt;
+
+Number of (reported) **cases** or **infection reports** in Ontario
+
+???
+this is usually what we are trying to forecast for a few weeks into the future
+
+--
+
+  - **underestimate** of actual infections, **delay** of 1-2 weeks
+  - depend on **testing availability** and **behaviour**
+
+--
+
+Can also fit to and forecast **hospitalizations**, **ICU admissions**, **deaths** simultaneously
+
+???
+- the other input into the fitting step is
+
+---
+
+&lt;img src="figs/collages/collages.004.png" width="1000" style="display: block; margin: auto;" /&gt;
+
+---
+
+## 💭 Model
+
+We use a **compartmental** epidemiological model (SEIR framework)
+
+???
+- this jargon may or may not mean something to you, so let's break it down and make sure we're all on the same page
+
+--
+
+&lt;img src="figs/flowchart1.png" height="370" style="display: block; margin: auto;" /&gt;
+
+???
+- SEIR refers to the main compartments in this model: susceptible, exposed, infected, recovered
+- the population is **partitioned** into one of these states
+- **everyone starts in the susceptible class** and then individuals can get **exposed** to (and therefore infected by) SARS-CoV-2
+- and then there are downstream outcomes
+
+-----
+
+- each of these arrows represents a **flow rate** specified with various parameters
+
+--
+
+New infections (and thus **infection reports**, our forecast target) are governed by **transmission**: susceptible `\(\rightarrow\)` exposed
+
+???
+however, new infections (and thus infection reports, the data we're usually calibrating to) are governed by transmission, so the susceptible to exposed pathway is the one we focus on
+
+---
+
+## 🦠 Transmission
+
+???
+so what we generally care about getting right is transmission in the population (key to our model fitting)
+
+--
+
+We model **transmission** as
+
+$$
+\quad  S(t)  \xrightarrow{(\color{#1E3765}{\text{force of infection}}) \times S(t)} E(t)
+$$
+
+where `\(S(t) =\)` susceptibles at time t, and `\(E(t) =\)` exposeds.
+
+???
+-----
+- transmission converts susceptibles to exposeds
+- the **per capita rate** with which this **conversion** happens is called the **force of infection**
+
+--
+
+Then we assume
+
+$$
+\color{#1E3765}{\text{force of infection} = \beta \times \frac{I(t)}{N}}
+$$
+for `\(I(t) =\)` infecteds and `\(N\)`, the total population size.
+
+???
+-----
+- the **basic structure** of the force of infection in our model (though it's actually more complicated because we have different types of infecteds)
+
+--
+
+- `\(\color{#1E3765}{\beta}\)`: transmission rate (# of **transmission opportunities** per individual per day, depends on the average **contact rate** between individuals)
+
+???
+-----
+- **transmission opportunities**
+
+--
+
+- `\(\color{#1E3765}{\frac{I(t)}{N}}\)`: probability of **encountering an infective** during a transmission opportunity at time `\(\color{#1E3765}{t}\)`, (assuming **homogeneous mixing**)
+
+???
+-----
+- probability of encountering an infective (**encounters are random**)
+- the key parameter we want to fit is `\(\beta\)`
+
+---
+
+&lt;img src="figs/collages/collages.005.png" width="1000" style="display: block; margin: auto;" /&gt;
+
+---
+
+## 🔧 Calibration
+
+Transmission, `\(\color{#1E3765}{\beta}\)`, does **not** remain constant over time! 
+
+???
+- does anyone want to take a guess at what might change transmission over time?
+
+--
+
+Depends on:
+
+--
+
+- public health **measures**
+
+--
+
+- population **behaviour**
+
+--
+
+- mix of **variants** floating around
+
+--
+
+- **vaccine** coverage
+
+--
+
+&lt;br&gt;
+Assume `\(\color{#1E3765}{\beta(t)}\)` is **piecewise-constant**, and re-estimate when there has been a **significant change in public health measures and/or behaviour** (e.g. restrictions loosening, stay-at-home order).
+
+--
+
+(Effects of **variants** and **vaccines** are **incorporated explicitly**—we're not trying to fit this.)
+
+---
+
+## 🔧 Calibration
+
+&lt;img src="figs/betademo-1.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+???
+-----
+- here is an example of what a fitted beta(t) might look like
+  
+---
+
+&lt;img src="figs/collages/collages.006.png" width="1000" style="display: block; margin: auto;" /&gt;
+
+---
+
+## 🔮 Forecasting
+
+&lt;img src="figs/betademo-1.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+We make **assumptions** on `\(\color{#1E3765}{\beta(t)}\)` in the forecast period.
+  
+???
+- we make...
+
+---
+
+## 🔮 Forecasting
+
+&lt;img src="figs/betademo2-1.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+We make **assumptions** on `\(\color{#1E3765}{\beta(t)}\)` in the forecast period.
+
+Start with **latest** `\(\color{#1E3765}{\beta}\)` (from last estimation window).
+
+???
+- start with...
+
+---
+
+## 🔮 Forecasting
+
+&lt;img src="figs/betademo-1.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+We make **assumptions** on `\(\color{#1E3765}{\beta(t)}\)` in the forecast period.
+
+Start with **latest** `\(\color{#1E3765}{\beta}\)` (from last estimation window).
+
+In **forecast period**, either:
+
+???
+- in forecast period...
+
+---
+
+## 🔮 Forecasting
+
+&lt;img src="figs/betademo3-1.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+We make **assumptions** on `\(\color{#1E3765}{\beta(t)}\)` in the forecast period.
+
+Start with **latest** `\(\color{#1E3765}{\beta}\)` (from last estimation window).
+
+In **forecast period**, either:
+
+  1. use latest `\(\color{#1E3765}{\beta}\)` (**status quo** forecast)
+
+???
+- use latest...
+
+---
+  
+## 🔮 Forecasting
+
+&lt;img src="figs/betademo4-1.png" width="1344" style="display: block; margin: auto;" /&gt;
+
+We make **assumptions** on `\(\color{#1E3765}{\beta(t)}\)` in the forecast period.
+
+Start with **latest** `\(\color{#1E3765}{\beta}\)` (from last estimation window).
+
+In **forecast period**, either:
+
+  1. use latest `\(\color{#1E3765}{\beta}\)` (**status quo** forecast)
+
+  2. increase (or decrease) transmission by **x%** relative to latest `\(\color{#1E3765}{\beta}\)`
+  
+???
+- increase (or decrease)...
+- that's the general procedure we employ
+- and this all worked very well for a while, as we saw from that first forecast we looked at... but then
+
+---
+
+class: inverse, center, middle
+
+# 🦠 Omicron 🦠
+
+???
+- has been notoriously difficult to forecast for a few reasons
+- a quick recap
+
+---
+
+class: center, middle
+
+&lt;img src="figs/omi-timeline-1.png" width="1000" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center, middle
+
+&lt;img src="figs/omi-timeline-2.png" width="1000" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: inverse, center, middle
+
+## How safe is the 31 Jan reopening?
+
+???
+- in january, the question we were focused on was 
+
+---
+
+## ⛰ Recent forecasting challenges
+
+???
+- here are some of the challenges we were facing
+
+--
+
+**Synchronized surges** of Omicron across similar jurisdictions around the world
+
+&lt;img src="figs/surge-sync.png" width="700" style="display: block; margin: auto;" /&gt;
+
+???
+-didn't really have the benefit of analyses and parameter estimates from elsewhere for this new variant
+- couldn't compare to south africa
+- (in the alpha wave, we benefited greatly from parameter estimates from the UK, which was about a month ahead of us in their surge)
+
+---
+
+## ⛰ Recent forecasting challenges
+
+Disease surveillence has been **significantly limited**
+
+--
+
+**Tests completed**
+&lt;img src="figs/test-vol.png" width="700" style="display: block; margin: auto;" /&gt;
+
+???
+- relatively small number given we were taking off exponentially... low supply or low demand?
+
+--
+
+**Test positivity**
+&lt;img src="figs/percent-pos.png" width="700" style="display: block; margin: auto;" /&gt;
+
+???
+- low supply
+- so much demand, the gov changed criteria for who in the general population can get a PCR test... need to be high risk of severe infection now (even more underreporting and bias towards detecting severe infection)
+
+---
+
+## ⛰ Recent forecasting challenges
+
+&lt;br&gt;
+Calibrating to **acute care** (non-ICU hospital) **occupancy alone** after 15 Dec
+
+--
+
+&lt;br&gt;
+Needed expected **severity** (% of infections that are hospitalized) to calibrate transmission from _hospitalizations_
+
+???
+this was a big question at the time, and there was a lot of debate as to how mild this thing would be in Ontario's population
+
+--
+
+&lt;span style="font-size: 30px;display:block; margin-top:120px;"&gt;
+**Identifiability issue**: at least two distinct cases fit the hospitalization data equally well
+&lt;/span&gt;
+
+---
+
+## 🔮 "Forecast" from 18 Jan 2022
+
+--
+
+&lt;img src="figs/forecast_status_quo-1.png" width="700" style="display: block; margin: auto;" /&gt;
+
+???
+- just a status quo forecast
+
+---
+
+## 🔮 "Forecast" from 18 Jan 2022
+
+
+&lt;img src="figs/forecast_status_quo2-1.png" width="700" style="display: block; margin: auto;" /&gt;
+
+???
+- the difference between these two worlds is how many people actually got infected in the omicron wave, a.k.a. how much natural immunity did we build up in the population
+- if a lot of people actually got sick in that wave, reopening would pose less of a risk to hospital capacity
+- if not many people got sick, we could have been in for a bigger hospiatlization surge
+
+--
+
+At the time, we didn't know **which world we were in**,&lt;br&gt;so we don't know **how safe it was to reopen**
+
+???
+- but then we got some reliable severity estimates from PHO, which we fed into the model so that we could make a real forecast
+
+---
+
+## 🔮 Forecast from 26 Jan 2022
+
+--
+
+&lt;img src="figs/forecast_2022-01-26-1.png" width="800" style="display: block; margin: auto;" /&gt;
+
+
+???
+- as you can see, there were a lot of assumptions that went into this one... didn't know the effect of schools nor the effect of 31 jan reopening, so we made scenarios
+- what happened?
+
+---
+
+## 🔮 Forecast from 26 Jan 2022
+
+&lt;img src="figs/forecast_2022-01-26-2.png" width="800" style="display: block; margin: auto;" /&gt;
+
+???
+- does that mean that we built up substantial natural immunity in the population? maybe. can't say that's what's causing thise downturn. could be a lot of factors, including population behaviour, those being highest risk of spreading being recently immune, booster protection is better than we assumed in the model, etc.
+- may simply be that the relaxation we did on 31 jan wasn't that risky for hospitalizations!
+
+---
+
+## 👀 Looking forward
+
+--
+
+- **goals are changing** 🎯 controlling ~~spread~~ hospital occupancy
+
+???
+- this mentality leaves a number of people behind: not everyone can afford to take their chances with COVID and hope it's mild
+- even mild cases can lead to serious outcomes (which also continue to tax the healthcare system + peoples' quality of life): long COVID, premature brain ageing
+
+--
+
+- "we're **done**" &amp; "this is the **best we can do**" 😩
+
+???
+- critical mass seems to have shifted towards being done with the pandemic... but the pandemic is not done with us
+- i understand this mentality... lots of people now know someone who had mild COVID, feels like much less of a threat (and it is, thanks to vaccination!), so we're doing things like
+
+--
+
+  - taking more risks 🤞
+  - lifting restrictions (reopenings) 🎉
+  - reduced testing requirements 🔓
+  
+???
+- this is not all bad, we do have to live our lives, but we need to be smart about it
+
+--
+  
+- 🚨 **this disease will not just disappear** 🚨
+
+???
+- smallpox is the only disease we've successfully eradicated in humans...
+
+--
+  - did H1N1, HIV, avian flu disappear?
+
+???
+- all these other pandemic pathogens you may have heard of are all still floating around!
+  - but that doesn't mean they're necessarily a huge threat to us anymore 
+- SARS-CoV-2 is now part of our ecosystem, which is not to say that we may not one day eradicate it, we're just not there yet
+- need to be ready and willing to act when the situation worsens, and relax when it gets better
+- if we barrel into normalcy by force, without a solid strategy, we will continue to bear a needlessly high disease burden
+- we're not soley at the mercy of this virus and i want to leave you with a bit of optimism here, because i really do think/hope that the worst is over
+
+---
+
+## 👀 Looking forward
+
+- **plan** for occasional COVID outbreaks 📝
+
+???
+- COVID flare ups will happen, we need to have a plan for them, to keep the most vulnerable in our society safe (just like with influenza)
+
+--
+
+  - temporary **masking** 😷 and **testing** 🧪 advisories 
+  
+--
+      - distribution of free **masks** and **rapid tests**
+      
+--
+
+  - normalize easy **protective behaviours** ⚠️  when the situation worsens
+  
+--
+
+      - masking in public spaces
+      - rapid testing before particularly large gatherings 
+      
+???
+- be prepared to mask
+- be prepared to test
+  - getting good masks and rapid tests into peoples' medicine cabinets before outbreaks happen
+ - need to normalize easy protective behaviours 
+  - masking in public spaces during COVID season as a normal thing to do (in east asian people routinely mask in public during flu season)
+  - rapid testing before particularly large gatheringsthat we've seen can be superspreader events (e.g., indoor weddings, birthday parties, etc.)
+- but on order to do any of this, we need to have eyes on the situation
+
+--
+
+- don't give up on **surveillence** 🔦 🔍 👀
+
+--
+
+  - **wastewater**
+  
+--
+
+      - ✅  changes in spread 📈 📉
+      
+???
+- great for tracking changes in trends (increase/decrease in spread)
+
+--
+      - ❌ number of infections
+
+???
+- difficult to infer number of infections (and therefore project hospitalizations) with much confidence
+- viral shedding into wastewater varies between individuals and may depend on severity of illness, vax status, variant
+      
+--
+
+  - routine **workplace** testing 🏥 🧸
+  
+???
+- esp in higher risk settings (long-term care homes, daycares)
+    - great use of rapid tests
+    
+--
+
+- **sentinel** surveillence 💂
+      
+???
+- enroll randomized households in free routine testing (randomize geographically, socioeconomically, racially), and bring the sampling to the people (e.g. REACT study UK, 150k participants each month)
+- and the message i'd like to leave you with is the following
+  
+---
+
+class: inverse, center, middle
+
+# 🔑 We need to learn to&lt;br&gt;live _with_ COVID,&lt;br&gt;not live _despite_ it 🔑
+
+???
+- its tempting to do the latter, what i think a number of people are doing now, but if we want to keep our disease burdens down, we have to be a bit more strategic
+
+---
+
+class: center, middle
+
+## 🤝 Collaborators
+
+&lt;img src="figs/collaborators.png" width="800" style="display: block; margin: auto;" /&gt;
+
+???
+- with that, i'd like to thank my collaborators
+- david ben and jonathan are faculty at mcmaster, evan is also a postdoc
+- and in the bottom row we have mike li, now at PHAC, truly central to our forecasting effort, and steven walker who is a data scientist at canmod, a newly-established canadian mathematical modelling network 
+
+---
+
+class: center, middle
+
+&lt;img src="figs/macpan.png" width="800" style="display: block; margin: auto;" /&gt;
+
+[https://github.com/mac-theobio/McMasterPandemic](https://github.com/mac-theobio/McMasterPandemic)
+
+???
+- i'll also mention that the model and forecasting software are implemented as a **publicly-available R package**, which you can find on **Github**
+
+---
+
+class: center
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+# 🔮 Forecast updates
+
+[https://mac-theobio.github.io/covid-19/](https://mac-theobio.github.io/covid-19/)
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+# Thank you for listening! 🙏
+
+???
+- blog posts detailing our latest forecasts, as well as some i've discussed in this presentation (posts go into more detail than i've done here, if you're interested)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="cols_macro.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": ""
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
