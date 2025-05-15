@@ -1,5 +1,6 @@
 ---
 title: "Crochet workshop 🧶"
+subtitle: "[papsti.github.io/talks/2025-05-15_crochet.html](https://papsti.github.io/talks/2025-05-15_crochet.html)<br>"
 date: 2025-05-15
 author: "Irena Papst"
 format: 
