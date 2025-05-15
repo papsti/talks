@@ -42,7 +42,9 @@ format:
 
 # Getting started
 
--   Holding the working yarn, work, and hook
+-   Holding the working yarn, work and your hook
+
+    -   A few options [here](https://www.youtube.com/watch?v=rfRG68v0r1I) and [here](https://youtu.be/CByEVGk26EE?si=24AeTfvsIWzkLgJN)
 
 -   Flat or cylindrical work: [Starting chain](https://oombawkadesigncrochet.com/stitch-anatomy-the-starting-chain/)
 
