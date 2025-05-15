@@ -1,0 +1,117 @@
+---
+title: "Crochet workshop 🧶"
+date: 2025-05-15
+author: "Irena Papst"
+format: 
+    revealjs:
+        theme: [serif, theme.scss]
+        incremental: true
+        embed-resources: true
+---
+
+# Who already crochets/knits?
+
+# What can you crochet?
+
+::: panel-tabset
+### Wearables
+
++:-----------------------------------------------------------------------:+:--------------------------------------------------------------------:+:----------------------------------------------------------:+:--------------------------------------------------------------------:+
+| ![](assets/twisted-earwarmer.jpg){width="275"}                          | ![](assets/cropped-cardi.jpeg){width="234" height="275"}             | ![](assets/for-all-hat.jpeg){width="211"}                  | ![](assets/daisy-bag.jpg){width="206"}                               |
+|                                                                         |                                                                      |                                                            |                                                                      |
+| [🔗](https://www.ravelry.com/patterns/library/simple-twisted-earwarmer) | [🔗](https://www.ravelry.com/patterns/library/eriu-cropped-cardigan) | [🔗](https://www.ravelry.com/patterns/library/for-all-hat) | [🔗](https://www.ravelry.com/patterns/library/breezy-days-daisy-bag) |
++-------------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------+----------------------------------------------------------------------+
+
+### Household items
+
++:-----------------------------------------------------------------:+:-------------------------------------------------------------:+:--------------------------------------------------------------:+
+| ![](assets/blanket.jpeg){width="366"}                             | ![](assets/basket.jpg){width="275"}                           | ![](assets/plant-hanger.jpg){width="302"}                      |
+|                                                                   |                                                               |                                                                |
+| [🔗](https://www.ravelry.com/patterns/library/6-day-star-blanket) | [🔗](https://www.ravelry.com/patterns/library/stash-basket-9) | [🔗](https://www.ravelry.com/patterns/library/plant-hanger-16) |
++-------------------------------------------------------------------+---------------------------------------------------------------+----------------------------------------------------------------+
+
+### Toys
+
++:------------------------------------------------------------:+:-----------------------------------------------------:+:------------------------------------------------------------------:+
+| ![](assets/balloon-dog.jpg){width="287"}                     | ![](assets/cats.jpg){width="275"}                     | ![](assets/whale.jpg){width="309"}                                 |
+|                                                              |                                                       |                                                                    |
+| [🔗](https://www.ravelry.com/patterns/library/balloon-dog-9) | [🔗](https://www.ravelry.com/patterns/library/cat-84) | [🔗](https://www.ravelry.com/patterns/library/baby-humpback-whale) |
++--------------------------------------------------------------+-------------------------------------------------------+--------------------------------------------------------------------+
+:::
+
+# Getting started
+
+-   Holding the working yarn, work, and hook
+
+-   Flat or cylindrical work: [Starting chain](https://oombawkadesigncrochet.com/stitch-anatomy-the-starting-chain/)
+
+-   Round work: magic circle options [1](https://www.youtube.com/shorts/F4eQO8RnAIY), [2](https://youtube.com/shorts/oAHzCK28hXM?si=MU9ShUeTmNUPFYtN), [3](https://www.youtube.com/shorts/jI9tfinxUJs)
+
+-   Remember to **hang loose**! 🤙
+
+# Reading the work
+
+Learn to recognize stitches
+
+# Reading the work
+
+![](assets/counting.png){fig-align="center"}
+
+# Reading the work
+
+![](assets/count-chain.png){fig-alt="Source: https://www.craftyarncouncil.com/standards/how-to-read-crochet-pattern" fig-align="center"}
+
+# Where to insert?
+
+![](assets/chain.jpeg){fig-alt="Source: https://blog.bellacococrochet.com/the-advanced-foundation-chain/" fig-align="center"}
+
+# Basic of stitches
+
+-   [Slip stitch](https://youtube.com/shorts/ICCbL8ujt9I?si=AFO9DWdk6aOstgCp)
+
+-   [Single crochet](https://youtube.com/shorts/RE9DFIFCT7k?si=SqrVdQl8yk_F0zZ3)
+
+-   [Half double crochet](https://youtube.com/shorts/SVi9OgUfryg?si=sSIpsya1BgfT8c8r)
+
+-   [Double crochet](https://youtube.com/shorts/E-5Jyo8VeYE?si=moXOrbXLWu4Z_Cfz)
+
+-   Frogging 🐸 (undoing stitches)
+
+    -   Hook in first then pull!
+
+## Difference between US and UK notation
+
+![](assets/us-vs-uk.jpg){fig-alt="Source: https://www.reddit.com/r/crochet/comments/gmk88c/uk_to_us/" fig-align="center"}
+
+# Reading the work
+
+![](assets/count-stitches2.png){width="785" fig-align="center"}
+
+# Reading the work
+
+-   [Counting is hard](https://www.sigonimacaroni.com/counting-crochet-stitches-and-rows/)
+
+-   [Especially when it comes to turning chains](https://www.sigonimacaroni.com/does-the-turning-chain-count-as-a-stitch/)
+
+# Going further
+
+-   Where to find patterns/tutorials
+
+    -   [Ravelry](https://www.ravelry.com/)
+    -   Youtube
+
+-   Choosing yarn type/hook sizes
+
+    -   Reading yarn labels
+    -   Yarn fibres
+
+# Going further
+
+-   Crochet vs knitting
+
+    -   Personal preference!
+    -   In the round → crochet?
+
+-   Chainless foundation stitches (*e.g.*, [foundation single crochet](https://youtu.be/SyjAiEhFFYQ?si=XbonyIaYrPkYPLtr))
+
+-   [Colour changes while weaving in tail](https://youtu.be/3GZozjoAQS8?si=rS_hX7pYOxmwKUZi)
