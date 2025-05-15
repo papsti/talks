@@ -64,9 +64,13 @@ Learn to recognize stitches
 
 # Where to insert?
 
-![](assets/chain.jpeg){fig-alt="Source: https://blog.bellacococrochet.com/the-advanced-foundation-chain/" fig-align="center"}
+![](assets/chain.png){fig-alt="Source: https://oombawkadesigncrochet.com/stitch-anatomy-the-starting-chain/" fig-align="center"}
 
-# Basic of stitches
+# Where to insert?
+
+![](assets/chain2.jpg){fig-alt="Source: https://oombawkadesigncrochet.com/stitch-anatomy-the-starting-chain/" fig-align="center"}
+
+# Basic stitches
 
 -   [Slip stitch](https://youtube.com/shorts/ICCbL8ujt9I?si=AFO9DWdk6aOstgCp)
 
